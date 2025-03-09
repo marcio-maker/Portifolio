@@ -7,28 +7,27 @@ function openUrl(url) {
 const swiperScript = document.createElement('script');
 swiperScript.src = 'https://unpkg.com/swiper/swiper-bundle.min.js';
 swiperScript.onload = () => {
-    // Verifica se o elemento .swiper-container existe antes de inicializar o Swiper
-    if (document.querySelector('.swiper-container')) {
-        const swiper = new Swiper('.swiper-container', {
-            slidesPerView: 'auto',
-            spaceBetween: 20,
-            loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    }
+    const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 };
 document.head.appendChild(swiperScript);
+
+// Remova a segunda inicialização do Swiper e o segundo trecho de scroll suave
 
 // Scroll suave para links internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -67,13 +66,21 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll); // Executa ao carregar a página
 
-// Evento de aceitação de cookies
-const cookieConsent = document.getElementById('cookieConsent');
-const acceptCookiesButton = document.getElementById('acceptCookies');
-
-if (cookieConsent && acceptCookiesButton) {
-    acceptCookiesButton.addEventListener('click', function() {
-        cookieConsent.style.display = 'none';
-        // Aqui você pode adicionar o código para definir o cookie de consentimento
-    });
-}
+// Inicialização do Swiper
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+document.getElementById('acceptCookies').addEventListener('click', function() {
+    document.getElementById('cookieConsent').style.display = 'none';
+    // Aqui você pode adicionar o código para definir o cookie de consentimento
+});
