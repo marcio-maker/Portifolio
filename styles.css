@@ -1,3 +1,4 @@
+
 :root {
     --primary: #00e5ff;
     --secondary: #7b2ff7;
@@ -193,17 +194,38 @@ nav {
     border-radius: 10px;
 }
 
+/* Reset básico */
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
 .about-content p {
     font-size: 1.1rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 1.5rem;
 }
 
 .highlight {
-    color: var(--primary);
+    color: #007bff; /* Azul vibrante para destaques */
     font-weight: 600;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 15px;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+}
+
 
 /* Skills Section */
 .skills {
