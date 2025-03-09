@@ -59,3 +59,7 @@ const swiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
 });
+document.getElementById('acceptCookies').addEventListener('click', function() {
+    document.getElementById('cookieConsent').style.display = 'none';
+    // Aqui você pode adicionar o código para definir o cookie de consentimento
+});
