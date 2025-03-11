@@ -35,8 +35,7 @@ header {
     background: rgba(10, 10, 20, 0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-<!--Teste-->
+/* teste*/
 
 /* Menu Mobile */
 .hamburger-menu {
@@ -112,7 +111,13 @@ header {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajustar o grid de projetos */
     }
 }
-<!--Teste-->
+img {
+    max-width: 100%; /* Garantir que a imagem não ultrapasse o contêiner */
+    height: auto; /* Manter a proporção da imagem */
+}
+
+
+/* teste */
 
 nav {
     display: flex;
