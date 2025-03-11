@@ -84,3 +84,37 @@ document.getElementById('acceptCookies').addEventListener('click', function() {
     document.getElementById('cookieConsent').style.display = 'none';
     // Aqui você pode adicionar o código para definir o cookie de consentimento
 });
+
+// teste 
+// Menu Mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active'); // Alternar a visibilidade do menu
+    });
+});
+// Inicialização do Swiper
+const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1, // 1 slide em telas pequenas
+        },
+        768: {
+            slidesPerView: 2, // 2 slides em tablets
+        },
+        1024: {
+            slidesPerView: 3, // 3 slides em telas maiores
+        },
+    },
+});
