@@ -36,6 +36,83 @@ header {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+<!--Teste-->
+
+/* Menu Mobile */
+.hamburger-menu {
+    display: none; /* Esconder o botão em telas maiores */
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Mostrar o botão em telas menores */
+    }
+
+    .nav-links {
+        display: none; /* Esconder os links em telas menores */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(10, 10, 20, 0.9);
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostrar os links quando o menu estiver ativo */
+    }
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Reduzir o tamanho do título */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Reduzir o tamanho do texto */
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr; /* Mudar para uma coluna em telas menores */
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajustar o grid de habilidades */
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajustar o grid de projetos */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Alinhar o footer em coluna */
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem; /* Ajustar o título para telas muito pequenas */
+    }
+
+    .hero p {
+        font-size: 0.8rem; /* Ajustar o texto para telas muito pequenas */
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajustar o grid de habilidades */
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajustar o grid de projetos */
+    }
+}
+<!--Teste-->
 
 nav {
     display: flex;
